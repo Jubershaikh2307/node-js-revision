@@ -10,14 +10,17 @@
 // ... and mny more
 
 const express = require("express");
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
 const PORT = 3000;
 
 const app = express();
 
 app.get("/", (req, res) => {
-  console.log("Create a server");
+  res.send({ welcome: "abcd" });
 });
 
-app.listen(PORT, () => {
-  console.log("This iss t");
-});
+app.use("/admin", adminRoutes);
+app.use("/shop", shopRoutes);
+
+app.listen(PORT);
