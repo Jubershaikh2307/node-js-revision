@@ -27,7 +27,7 @@ const requestHandler = (req, res) => {
     res.setHeader("Content-Type", "text/html");
     res.write("<h1>Ths is it mail work</h1>");
   }
-  res.end();
+  return res.end();
 };
 
 module.exports = requestHandler;
